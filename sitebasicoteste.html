@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <button id="myButton">Clique para mudar a cor de fundo!</button>
+        <p id="displayText" style="display: none;"></p>
+        <script>
+            var cores = ["orange", "green", "blue", "red", "purple", "yellow", "pink", "magenta", "brown"];
+            var textos = [
+                "Te amo!!",
+                "Beba água!!",
+                "Sabia que não dá pra sorrir e respirar pelo nariz ao mesmo tempo??",
+                "Mentira só queria ver seu sorriso hihi"
+            ];
+            var contadorCliques = 0;
+
+            document.getElementById("myButton").onclick = function() {
+                document.getElementById("displayText").textContent = textos[contadorCliques % textos.length];
+                document.getElementById("displayText").style.display = "block";
+                contadorCliques++;
+
+                var corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+                document.body.style.backgroundColor = corAleatoria;
+            }
+        </script>
+    </body>
+</html>
